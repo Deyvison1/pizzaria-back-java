@@ -12,14 +12,20 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
+@Builder
+@AllArgsConstructor
 @Table(name = "users")
 public class User implements Serializable {
+	
+	public User() {}
 
 	private static final long serialVersionUID = 1L;
 
@@ -29,6 +35,10 @@ public class User implements Serializable {
 	private String name;
 	private String email;
 	private String password;
+	@Column(nullable = false, updatable = true)
+	private String role;
+	@Column(nullable = true, updatable = true)
+	private String authority;
 	@Column(name = "created_at", nullable = false, updatable = false)
 	@CreationTimestamp
 	private LocalDateTime createdAt;
