@@ -23,11 +23,11 @@ public class CategoryService implements ICategoryService {
 	
 	@Override
 	public CategoryDTO add(Category category) {
-		return categoryMapper.toDTO(categoryRepo.save(category));
+		return categoryMapper.toDto(categoryRepo.save(category));
 	}
 
 	@Override
 	public List<CategoryDTO> findAll() {
-		return categoryMapper.toDTOList(categoryRepo.findAll());
+		return categoryMapper.toDto(categoryRepo.findAll());
 	}
 }

@@ -23,11 +23,11 @@ public class ProductService implements IProductService {
 	
 	@Override
 	public ProductDTO add(Product product) {
-		return productMapper.toDTO(productRepository.save(product));
+		return productMapper.toDto(productRepository.save(product));
 	}
 	@Override
 	public List<ProductDTO> findAll() {
-		return productMapper.toODTOList(productRepository.findAll());
+		return productMapper.toDto(productRepository.findAll());
 	}
 	
 	

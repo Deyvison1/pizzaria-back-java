@@ -16,7 +16,7 @@ import com.pizzaria.api.services.IOrderService;
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping("/order")
+@RequestMapping("/api/order")
 @AllArgsConstructor
 public class OrderController {
 

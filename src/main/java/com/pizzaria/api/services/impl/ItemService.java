@@ -25,18 +25,18 @@ public class ItemService implements IItemService {
 	
 	@Override
 	public ItemDTO add(Item item) {
-		return itemMapper.toDTO(itemRepo.save(item));
+		return itemMapper.toDto(itemRepo.save(item));
 	}
 
 	@Override
 	public void remove(ItemDTO item) {	
-		itemRepo.delete(itemMapper.toModel(item));
+		itemRepo.delete(itemMapper.toEntity(item));
 	}
 
 	@Override
 	public List<ItemDTO> findByOrder(Long orderId) {	
 		Optional<List<Item>> itens = itemRepo.findByTableOrderId(orderId);
-		return itemMapper.toDTOList(itens.orElseThrow( () -> new NotFoundException()));
+		return itemMapper.toDto(itens.orElseThrow( () -> new NotFoundException()));
 	}
 
 }

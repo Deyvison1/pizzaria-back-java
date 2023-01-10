@@ -22,11 +22,11 @@ public class OrderService implements IOrderService {
 	}
 	
 	public OrderDTO add(Order order) {
-		return orderMapper.toDTO(orderRepo.save(order));
+		return orderMapper.toDto(orderRepo.save(order));
 	}
 	
 	public List<OrderDTO> findAll() {
-		return orderMapper.toDTOList(orderRepo.findAll());
+		return orderMapper.toDto(orderRepo.findAll());
 	}
 	
 	

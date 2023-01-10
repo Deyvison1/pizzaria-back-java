@@ -29,23 +29,23 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public UserDTO add(User user) {
 		user.setPassword(encoder.encode(user.getPassword()));
-		return userMapper.toDTO(userRepo.save(user));
+		return userMapper.toDto(userRepo.save(user));
 	}
 
 	@Override
 	public List<UserDTO> findAll() {
-		return userMapper.toDTOList(userRepo.findAll());
+		return userMapper.toDto(userRepo.findAll());
 	}
 
 	@Override
 	public UserDTO findById(Long id) {
 		Optional<User> user = userRepo.findById(id);
-		return userMapper.toDTO(user.orElseThrow(() -> new NotFoundException()));
+		return userMapper.toDto(user.orElseThrow(() -> new NotFoundException()));
 	}
 
 	@Override
 	public UserDTO findByEmail(String email) {
 		Optional<User> user = userRepo.findByEmail(email);
-		return userMapper.toDTO(user.orElseThrow(() -> new NotFoundException()));
+		return userMapper.toDto(user.orElseThrow(() -> new NotFoundException()));
 	}
 }

@@ -16,7 +16,7 @@ import com.pizzaria.api.services.ICategoryService;
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping("/category")
+@RequestMapping("/api/category")
 @AllArgsConstructor
 public class CategoryController {
 	

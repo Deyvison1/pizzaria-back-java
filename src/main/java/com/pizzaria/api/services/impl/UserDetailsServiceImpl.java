@@ -42,7 +42,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                 .builder()
                 .username(userDTO.getEmail())
                 .password(userDTO.getPassword())
-                .roles("ADMIN", "USER")
+                .roles(userDTO.getRole())
                 .build();
     }
 
